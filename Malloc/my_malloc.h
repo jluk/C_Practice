@@ -1,7 +1,6 @@
 #ifndef __MY_MALLOC_H__
 #define __MY_MALLOC_H__
 
-//Justin Luk
 /* we need this *ONLY* for the size_t typedef */
 #include <stdio.h>
 
@@ -28,10 +27,10 @@ typedef struct metadata
  * functions complete successfully, the error code should be set to
  * NO_ERROR. */
 enum my_malloc_err {
-	NO_ERROR, //successful completion, always set ERRNO if completed
-	OUT_OF_MEMORY, //request can't be met due to lack of heap space
-	SINGLE_REQUEST_TOO_LARGE, //user request beyond largest block size
-	DOUBLE_FREE_DETECTED //if user attempts to free something already in freelist
+	NO_ERROR,
+	OUT_OF_MEMORY,
+	SINGLE_REQUEST_TOO_LARGE,
+	DOUBLE_FREE_DETECTED
 };
 enum my_malloc_err ERRNO;
 
@@ -64,10 +63,5 @@ void* my_memmove(void* dest, const void* src, size_t num_bytes);
  * odd? hopefully reading the NFO file will help you understand this.
  */
 void* my_sbrk(int);
-int getIndex(size_t);
-metadata_t* getBuddy(metadata_t*);
-void* offsetPtr(metadata_t*, int);
-void printFreeList();
-void printError();
 
 #endif /* __MY_MALLOC_H__ */

@@ -17,6 +17,5 @@ void pushFront(LIST *list, int data);
 void pushBack(LIST *list, int data);
 int popFront(LIST *list);
 int popBack(LIST *list);
-LIST* create_list(void);
 
 #endif
